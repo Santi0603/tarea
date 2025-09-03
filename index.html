@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Login</title>
+  <meta charset="UTF-8">
+  <title>Plataforma de Cursos</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Login</h2>
-  <form id="loginForm">
-    <input type="text" id="username" placeholder="Usuario" />
-    <input type="password" id="password" placeholder="Contraseña" />
-    <button type="submit">Ingresar</button>
-    <div id="loginAlert" class="alert"></div>
-  </form>
+  <!-- Login -->
+  <div id="login-container" class="card">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="usuario" placeholder="Usuario">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="login()">Ingresar</button>
+    <p id="login-error" class="error"></p>
+  </div>
+
+  <!-- Cursos -->
+  <div id="cursos-container" class="card hidden">
+    <h2>Bienvenido, <span id="nombre-usuario"></span></h2>
+    <h3>Selecciona un curso:</h3>
+    <ul id="lista-cursos"></ul>
+    <button onclick="logout()">Cerrar sesión</button>
+  </div>
+
+  <!-- Materias -->
+  <div id="materias-container" class="card hidden">
+    <h2>Curso: <span id="curso-seleccionado"></span></h2>
+    <h3>Materias disponibles:</h3>
+    <ul id="lista-materias"></ul>
+    <button onclick="volverCursos()">Volver a Cursos</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
